@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px; /* Adjust the top margin as needed */
+}
+
+.container img {
+    width: 1600px; /* Set the width of the image */
+    height: 680px; /* Set the height of the image */
+    object-fit: cover; /* Maintain the aspect ratio and cover the container */
+}

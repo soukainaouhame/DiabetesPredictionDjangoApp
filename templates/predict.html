@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <h1 style="color: midnightblue; font-family: arial, sans-serif; font-size: 30px; font-weight: bold; margin-top: 40px"><b>Diabetes Prediction System</b></h1>
+    <link rel="stylesheet" href="{% static 'DiabetesPrediction/css/style.css' %}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: lightblue;
+            position: relative; /* Nécessaire pour positionner les éléments enfants absolument */
+        }
+
+        input[type=submit] {
+            background-color: cornflowerblue;
+            border: 2px;
+            color: whitesmoke;
+            padding: 16px 32px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        form {
+            position: absolute;
+            top: 30%; /* Ajustez cette valeur pour positionner le formulaire verticalement */
+            left: 50%; /* Ajustez cette valeur pour positionner le formulaire horizontalement */
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.7); /* Fond semi-transparent pour le formulaire */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Classe pour ajuster les dimensions des zones de texte */
+        .form-input {
+            width: 300px; /* Définissez la largeur souhaitée */
+            padding: 10px; /* Ajoutez un espacement intérieur pour une meilleure apparence */
+            margin: 3px 0; /* Ajoutez une marge entre les champs de saisie */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'DiabetesPrediction/images/diab.jpg' %}" alt="Your Image Alt Text">
+        <form action="result">
+            <table>
+                <tr>
+                    <h3 style="color: cornflowerblue; font-family: arial, sans-serif; font-size: 20px; font-weight: bold; margin-top: 40px">Please Enter the following information :</h3>
+                </tr>
+                <tr>
+                    <td align="right">Pregnancies:</td>
+                    <td align="left"><input type="text" name="n1" class="form-input" value="{{ request.GET.n1 }}"></td>
+                </tr>
+                <tr>
+                    <td align="right">Glucose:</td>
+                    <td align="left"><input type="text" name="n2" class="form-input" value="{{ request.GET.n2 }}"></td>
+                </tr>
+                <tr>
+                    <td align="right">Blood Pressure:</td>
+                    <td align="left"><input type="text" name="n3" class="form-input" value="{{ request.GET.n3 }}"></td>
+                </tr>
+                <tr>
+                    <td align="right">Skin Thickness:</td>
+                    <td align="left"><input type="text" name="n4" class="form-input" value="{{ request.GET.n4 }}"></td>
+                </tr>
+                <tr>
+                    <td align="right">Insulin:</td>
+                    <td align="left"><input type="text" name="n5" class="form-input" value="{{ request.GET.n5 }}"></td>
+                </tr>
+                <tr>
+                    <td align="right">BMI:</td>
+                    <td align="left"><input type="text" name="n6" class="form-input" value="{{ request.GET.n6 }}"></td>
+                </tr>
+                <tr>
+                    <td align="right">Diabete pedigree function:</td>
+                    <td align="left"><input type="text" name="n7" class="form-input" value="{{ request.GET.n7 }}"></td>
+                </tr>
+                <tr>
+                    <td align="right">Age:</td>
+                    <td align="left"><input type="text" name="n8" class="form-input" value="{{ request.GET.n8 }}"></td>
+                </tr>
+            </table>
+            <input type="submit">
+            
+            {% if result2 %}
+                <p>The Result is: {{ result2 }}</p>
+            {% endif %}
+        </form>
+    </div>
+
+    <!-- Your other content... -->
+</body>
+</html>

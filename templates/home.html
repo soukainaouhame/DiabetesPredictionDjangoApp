@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <h1 style="color: cornflowerblue;font-family:arial,sans-serif ; font-size:30px; font-weight: bold; margin-top:40px"><b>Diabetes Prediction Home</b></h1>
+    <link rel="stylesheet" href="{% static 'DiabetesPrediction/css/style.css' %}">
+</head>
+<body>
+    <style type="text/css">
+    input[type=submit]{
+        background-color: cornflowerblue;
+        border:2px;
+        color:whitesmoke;
+        padding: 16px 32px;
+        cursor:pointer;
+        margin-top:15px;
+    }
+    body{
+        background-color:lightblue;
+    }
+   
+    </style>
+    
+    <div class="container">
+        <img src="{% static 'DiabetesPrediction/images/doc.jpg' %}" alt="Your Image Alt Text">
+    
+    <form action="predict">
+
+        <input type="submit" value="Let's get Started">
+    </form>
+    </div>
+    <!-- Your other content... -->
+   
+</body>
+</html>
